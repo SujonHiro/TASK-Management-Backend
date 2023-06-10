@@ -1,5 +1,5 @@
 const express=require("express")
-//const router=require("./src/routes/api")
+const router=require("./src/routes/api")
 const app=express()
 const helmet=require("helmet")
 const mongoose=require("mongoose")
@@ -31,7 +31,7 @@ console.log("Success")
     console.log(err)
 })
 
-//app.use("api/v1",router)
+app.use("/api/v1",router)
 
 app.use("*",(req,res)=>{
     res.status(404).json({status:'Fail',data:"Not Found"})

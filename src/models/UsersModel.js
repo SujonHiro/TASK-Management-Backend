@@ -3,9 +3,10 @@ const  mongoose=require("mongoose")
 const UsersSchema=mongoose.Schema(
     {
         email:{type:String,unique:true},
-        title:{type:String},
-        description:{type:String},
-        status:{type:String}
+        firstname:{type:String},
+        lastname:{type:String},
+        mobile:{type:String},
+        password:{type:String}
 
     },{timestamps:true,versionKey:false}
 )
