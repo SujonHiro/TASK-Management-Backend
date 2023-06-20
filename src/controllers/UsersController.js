@@ -28,3 +28,17 @@ exports.registration=async(req,res)=>{
         res.status(200).json({status:'Fail',data:error})
     }
  }
+
+ //Profile Details
+
+exports.profileDetails=async(req,res)=>{
+    try {
+        let email=req.headers['email']
+        //console.log('Email:'+ email);
+        let results= await UsersModel.find({email:email})
+        res.status(200).json({status:'Success',data: results})
+        
+    } catch (error) {
+        res.status(200).json({status:'Fail',data:error})
+    }
+}
